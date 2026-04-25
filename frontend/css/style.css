@@ -1,0 +1,280 @@
+* Общие стили */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: Arial, sans-serif;
+background: #f0f2f5;
+color: #1a1a1a;
+min-height: 100vh;
+}
+/* Шапка */
+header {
+background: #2d3748;
+color: white;
+text-align: center;
+padding: 2rem;
+}
+header h1 {
+font-size: 2rem;
+margin-bottom: 0.4rem;
+}
+.subtitle {
+color: #a0aec0;
+font-size: 0.95rem;
+}
+/* Основной контент */
+main {
+max-width: 700px;
+margin: 0 auto;
+padding: 2rem 1rem;
+}
+/* Форма добавления */
+.add-form {
+background: white;
+border-radius: 12px;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.add-form h2 {
+font-size: 1rem;
+color: #4a5568;
+margin-bottom: 1rem;
+}
+.form-col {
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.form-col input,
+.form-col textarea {
+padding: 0.65rem 0.9rem;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 0.95rem;
+font-family: inherit;
+outline: none;
+resize: none;
+transition: border-color 0.2s;
+}
+.form-col input:focus,
+.form-col textarea:focus {
+border-color: #667eea;
+}
+.form-col button {
+padding: 0.65rem;
+background: #667eea;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 0.95rem;
+cursor: pointer;
+transition: background 0.2s;
+}
+.form-col button:hover {
+background: #5a6fd6;
+}
+.form-col button:disabled {
+background: #a0aec0;
+cursor: not-allowed;
+}
+.error-message {
+color: #e53e3e;
+font-size: 0.85rem;
+margin-top: 0.4rem;
+min-height: 1.2rem;
+}
+/* Фильтры ─ */
+.filters {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+margin-bottom: 1rem;
+flex-wrap: wrap;
+}
+.filter-btn {
+padding: 0.4rem 1rem;
+border: 1px solid #ddd;
+border-radius: 20px;
+background: white;
+font-size: 0.85rem;
+cursor: pointer;
+transition: all 0.15s;
+color: #4a5568;
+}
+.filter-btn:hover {
+border-color: #667eea;
+color: #667eea;
+}
+.filter-btn.active {
+background: #667eea;
+border-color: #667eea;
+color: white;
+}
+.tasks-count {
+margin-left: auto;
+font-size: 0.85rem;
+color: #718096;
+}
+/* Текст загрузки */
+.loading-text {
+text-align: center;
+color: #718096;
+padding: 2rem;
+}
+/* Список задач */
+.tasks-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+/* Карточка задачи */
+.task-item {
+background: white;
+border-radius: 10px;
+padding: 1rem 1.25rem;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+border-left: 4px solid #667eea;
+transition: box-shadow 0.15s;
+}
+.task-item:hover {
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.task-item.completed {
+border-left-color: #68d391;
+opacity: 0.7;
+}
+/* Режим просмотра */
+.task-view {
+display: flex;
+align-items: flex-start;
+gap: 0.75rem;
+}
+.task-checkbox {
+width: 20px;
+height: 20px;
+cursor: pointer;
+accent-color: #667eea;
+flex-shrink: 0;
+margin-top: 2px;
+}
+.task-content {
+flex: 1;
+}
+.task-title {
+font-size: 0.95rem;
+font-weight: 600;
+color: #2d3748;
+margin-bottom: 0.2rem;
+}
+.task-item.completed .task-title {
+text-decoration: line-through;
+color: #a0aec0;
+}
+.task-description {
+font-size: 0.82rem;
+color: #718096;
+margin-bottom: 0.3rem;
+}
+.task-date {
+font-size: 0.75rem;
+color: #cbd5e0;
+}
+.task-actions {
+display: flex;
+gap: 0.4rem;
+flex-shrink: 0;
+}
+.btn-edit-task {
+background: none;
+border: 1px solid #bee3f8;
+color: #3182ce;
+padding: 0.25rem 0.6rem;
+border-radius: 5px;
+font-size: 0.78rem;
+cursor: pointer;
+transition: background 0.15s;
+}
+.btn-edit-task:hover {
+background: #ebf8ff;
+}
+.btn-delete-task {
+background: none;
+border: 1px solid #fed7d7;
+color: #e53e3e;
+padding: 0.25rem 0.6rem;
+border-radius: 5px;
+font-size: 0.78rem;
+cursor: pointer;
+transition: background 0.15s;
+}
+.btn-delete-task:hover {
+background: #fff5f5;
+}
+/* Режим редактирования */
+.task-edit {
+display: none;
+flex-direction: column;
+gap: 0.5rem;
+}
+.task-edit input,
+.task-edit textarea {
+padding: 0.5rem 0.7rem;
+border: 1px solid #ddd;
+border-radius: 6px;
+font-size: 0.9rem;
+font-family: inherit;
+outline: none;
+resize: none;
+transition: border-color 0.2s;
+}
+.task-edit input:focus,
+.task-edit textarea:focus {
+border-color: #667eea;
+}
+.edit-buttons {
+display: flex;
+gap: 0.5rem;
+}
+.btn-save-task {
+padding: 0.35rem 0.9rem;
+background: #667eea;
+color: white;
+border: none;
+border-radius: 6px;
+font-size: 0.82rem;
+cursor: pointer;
+transition: background 0.15s;
+}
+.btn-save-task:hover {
+background: #5a6fd6;
+}
+.btn-cancel-task {
+padding: 0.35rem 0.9rem;
+background: none;
+border: 1px solid #ddd;
+color: #718096;
+border-radius: 6px;
+font-size: 0.82rem;
+cursor: pointer;
+transition: background 0.15s;
+}
+.btn-cancel-task:hover {
+background: #f7fafc;
+}
+.edit-error {
+color: #e53e3e;
+font-size: 0.8rem;
+min-height: 1rem;
+}
+/* Пустое состояние */
+.empty-text {
+text-align: center;
+color: #a0aec0;
+padding: 3rem;
+font-size: 0.95rem;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TaskBoard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+<h1> TaskBoard</ ✅ h1>
+<p class="subtitle">Список задач</p>
+</header>
+<main> 
+<section class="add-form">
+<h2>Новая задача</h2>
+<div class="form-col">
+<input type="text" id="inputTitle" placeholder="Название задачи *" />
+<textarea id="inputDescription" placeholder="Описание (необязательно)" rows="2"></textarea>
+<button id="btnAdd">Добавить задачу</button>
+</div>
+<p class="error-message" id="errorMessage"></p>
+</section>
+
+<section class="filters">
+<button class="filter-btn active" data-filter="all">Все</button>
+<button class="filter-btn" data-filter="active">В работе</button>
+<button class="filter-btn" data-filter="completed">Выполненные</button>
+<span class="tasks-count" id="tasksCount"></span>
+</section>
+<p class="loading-text" id="loadingText">Загружаем задачи...</p>
+
+<ul class="tasks-list" id="tasksList"></ul>
+</main>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
